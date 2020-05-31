@@ -9,13 +9,13 @@ trigger:
 steps:
 - task: CopyFiles@2
   inputs:
-    Contents: 'Results.xml'
+    Contents: 'Sample.xml'
     TargetFolder: '$(Built.ArtifactStagingDirectory)'
 
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'VSTest'
-    testResultsFiles: 'Results.xml'
+    testResultsFiles: 'Sample.xml'
     failTaskOnFailedTests: true
 
 - task: PublishBuildArtifacts@1
